@@ -12,10 +12,13 @@ public class PrimaryController {
     @FXML
     private void switchToSecondary() throws IOException {
         try {
+            // connect to the database
             SQLDatabaseConnection sqlDatabaseConnection = new SQLDatabaseConnection();
+
             List<Map<String, Object>> results = sqlDatabaseConnection
                     .executeQuery(
                             "SELECT TOP (1000) [ArtikelID],[Preis pro Kg],[Name] FROM [WKB4_DB2_Projekt].[dbo].[alkait02_Artikel]");
+
             for (Map<String, Object> row : results) {
                 System.out.println(row.get("ArtikelID")
                         + " " + row.get("Preis pro Kg")
