@@ -1,4 +1,5 @@
 module hse.db2.chocolatery {
+    requires java.sql;
     requires javafx.controls;
     requires javafx.fxml;
 
